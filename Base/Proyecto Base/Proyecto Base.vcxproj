@@ -73,6 +73,10 @@
     <IncludePath>..\SDL2-2.0.5\include;..\SDL2_mixer-2.0.2\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\SDL2-2.0.5\lib\x86;..\SDL2_mixer-2.0.2\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>F:\ESTUDIS\2n DAM-ViOD\ENTORNS\GIT\Base\SDL2-2.0.5\include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\ESTUDIS\2n DAM-ViOD\ENTORNS\GIT\Base\SDL2-2.0.5\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>

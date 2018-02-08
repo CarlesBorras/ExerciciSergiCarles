@@ -21,6 +21,9 @@ int main(int argc, char* args[]) {
 
 	//variables
 	
+	bool exit = false;
+
+	//
 	gWindow = SDL_CreateWindow("Entorns", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
 	gRenderer = SDL_CreateRenderer(gWindow, -1, 0);
@@ -31,13 +34,47 @@ int main(int argc, char* args[]) {
 	
 	SDL_RenderPresent(gRenderer);
 
-	//gTexture = SDL_CreateTexture(gRenderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, 1024, 768);
+	while (!exit)
+	{
 
-	
+		SDL_Event test_event;
+		SDL_Scancode tecla;
+
+		while (SDL_PollEvent(&test_event)) {
+			switch (test_event.type) {
+			case SDL_KEYDOWN:
+				
+				tecla = test_event.key.keysym.scancode;
+				
+				if (tecla == SDL_SCANCODE_1) {
+					//funcio
+				}
+
+				if (tecla == SDL_SCANCODE_2) {
+					//funcio
+				}
+
+				if (tecla == SDL_SCANCODE_ESCAPE) {
+					exit = true;
+				}
+
+				break;
+
+			case SDL_QUIT:
+				exit = true;
+				break;
+			}
+		}
+
+
+	}
+
+
+	SDL_Quit();
 
 	system("pause");
 
-	SDL_Quit();
+	
 
 	return 0;
 }
